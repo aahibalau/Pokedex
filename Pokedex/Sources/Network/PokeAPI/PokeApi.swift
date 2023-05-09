@@ -7,6 +7,8 @@
 
 enum PokeApi {
   case speciesPage
+  case specieDetails(id: String)
+  case evolutionChain(id: String)
 }
 
 extension PokeApi: EndpointConfiguration {
@@ -15,6 +17,8 @@ extension PokeApi: EndpointConfiguration {
   var path: String {
     switch self {
     case .speciesPage: return commonPath + "pokemon-species"
+    case let .specieDetails(id): return commonPath + "pokemon-species/\(id)/"
+    case let .evolutionChain(id): return commonPath + "evolution-chain/\(id)/"
     }
   }
   

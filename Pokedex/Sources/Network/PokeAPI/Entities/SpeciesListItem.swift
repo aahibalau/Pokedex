@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SpeciesListItem: Codable {
+struct SpeciesListItem: Decodable {
   let name: String
   let url: String
 }

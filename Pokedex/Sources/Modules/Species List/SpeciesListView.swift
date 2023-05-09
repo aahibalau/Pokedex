@@ -21,7 +21,9 @@ struct SpeciesListView: View {
       } else {
         List {
           ForEach(viewModel.species) { specie in
-            SpecieCell(specie: specie)
+            NavigationLink(value: specie.id) {
+              SpecieCell(specie: specie)
+            }
           }
           if viewModel.hasNext {
             ProgressView()
@@ -33,6 +35,9 @@ struct SpeciesListView: View {
         }
         .listStyle(.plain)
         .navigationTitle("Species")
+        .navigationDestination(for: String.self) { id in
+          SpecieDetailsView(viewModel: viewModel.detailsViewModel(with: id))
+        }
       }
     }
     .onAppear {

@@ -15,6 +15,7 @@ class SpeciesListViewModel: ObservableObject {
   @Published var hasNext: Bool = false
   @Published var isLoading: Bool = false
   var bag = Set<AnyCancellable>()
+  private var selectedSpecie: SpecieDetailsViewModel?
   
   init(repository: SpeciesRepository) {
     self.repository = repository
@@ -39,4 +40,12 @@ class SpeciesListViewModel: ObservableObject {
       .store(in: &bag)
   }
   
+  func detailsViewModel(with id: String) -> SpecieDetailsViewModel {
+    if let selectedSpecie = self.selectedSpecie, selectedSpecie.specieId == id {
+      return selectedSpecie
+    }
+    let selectedSpecie = SpecieDetailsViewModel(id: id, useCase: SpecieDetailsUseCaseInteractor.useCase)
+    self.selectedSpecie = selectedSpecie
+    return selectedSpecie
+  }
 }

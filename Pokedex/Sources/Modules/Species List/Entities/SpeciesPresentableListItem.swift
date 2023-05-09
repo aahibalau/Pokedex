@@ -8,22 +8,25 @@
 import Foundation
 
 struct SpeciesPresentableListItem: Equatable, Identifiable {
-  private enum Constant {
-    static let imageUrlTemplate = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/%@.png"
-  }
   var id: String { specieUrl.lastPathComponent }
   let name: String
   var specieUrl: URL
+  var isHighlighted: Bool = false
   
   var iconUrl: URL? {
-    return URL(string: String(format: Constant.imageUrlTemplate, id))
+    return URL(string: String(format: CommonConstant.frontImageUrlTemplate, id))
   }
 }
 
 extension SpeciesPresentableListItem {
   init?(specie: SpeciesListItem) {
+    self.init(specie: specie, checkToHighlighted: nil)
+  }
+  
+  init?(specie: SpeciesListItem, checkToHighlighted: ((String) -> Bool)? = nil) {
     guard let specieUrl = URL(string: specie.url) else { return nil }
     name = specie.name.capitalized
     self.specieUrl = specieUrl
+    self.isHighlighted = checkToHighlighted?(self.id) ?? false
   }
 }
