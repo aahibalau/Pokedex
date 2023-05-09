@@ -9,7 +9,7 @@ import Foundation
 
 protocol EndpointFactory {
   func getSpeciesPage(offset: Int, limit: Int) -> BaseEndopoint<SpeciesPageRequest, PageResponse<SpeciesListItem>>
-  func getSpecieDetails(id: String) -> BaseEndopoint<EmptyRequest, SpecieResponse>
+  func getSpecieDetails(id: String) -> BaseEndopoint<EmptyRequest, SpecieDetailsResponse>
   func getEvolutionChain(id: String) -> BaseEndopoint<EmptyRequest, EvolutionChainResponse>
 }
 
@@ -26,7 +26,7 @@ class PokeApiEndpointFactory: EndpointFactory {
     urlEncodedBaseEndpoint(with: PokeApi.speciesPage, parameters: SpeciesPageRequest(offset: offset, limit: limit))
   }
   
-  func getSpecieDetails(id: String) -> BaseEndopoint<EmptyRequest, SpecieResponse> {
+  func getSpecieDetails(id: String) -> BaseEndopoint<EmptyRequest, SpecieDetailsResponse> {
     urlEncodedBaseEndpoint(with: PokeApi.specieDetails(id: id), parameters: EmptyRequest())
   }
   

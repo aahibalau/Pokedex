@@ -17,7 +17,7 @@ struct SpecieDetails {
 }
 
 extension SpecieDetails {
-  init(specieResponse: SpecieResponse) {
+  init(specieResponse: SpecieDetailsResponse) {
     self.id = specieResponse.id
     self.name = specieResponse.name
     self.evoulutionChainId = specieResponse.evolutionChainId

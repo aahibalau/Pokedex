@@ -32,7 +32,6 @@ class SpeciesListViewModel: ObservableObject {
         self?.isLoading = false
         switch completion {
         case let .failure(error):
-          print(error.localizedDescription)
           if self?.species.count == 0 {
             self?.errorText = "Something Went Wrong"
           }

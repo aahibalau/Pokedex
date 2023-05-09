@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol SpecieDetailsRepository {
-  func specie(with id: String) -> AnyPublisher<SpecieResponse, ApiError>
+  func specie(with id: String) -> AnyPublisher<SpecieDetailsResponse, ApiError>
   func evolutionChain(with id: String) -> AnyPublisher<EvolutionChainResponse, ApiError>
 }
 
@@ -22,7 +22,7 @@ struct BaseSpecieDetailsRepository: SpecieDetailsRepository {
     self.apiClient = apiClient
   }
   
-  func specie(with id: String) -> AnyPublisher<SpecieResponse, ApiError> {
+  func specie(with id: String) -> AnyPublisher<SpecieDetailsResponse, ApiError> {
     apiClient.sendRequest(to: endpointFactory.getSpecieDetails(id: id))
   }
   

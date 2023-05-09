@@ -39,9 +39,9 @@
 		DE58B03A2A09C8D700173718 /* SpeciesPresentableListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B0392A09C8D700173718 /* SpeciesPresentableListItem.swift */; };
 		DE58B0402A09D65A00173718 /* SpecieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B03F2A09D65A00173718 /* SpecieCell.swift */; };
 		DED30FB22A0A85EB001EB806 /* SpecieDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FB12A0A85EB001EB806 /* SpecieDetailsRepository.swift */; };
-		DED30FB42A0A9042001EB806 /* SpecieRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FB32A0A9042001EB806 /* SpecieRequest.swift */; };
+		DED30FB42A0A9042001EB806 /* EmptyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FB32A0A9042001EB806 /* EmptyRequest.swift */; };
 		DED30FB62A0A91C1001EB806 /* EvolutionChainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FB52A0A91C1001EB806 /* EvolutionChainResponse.swift */; };
-		DED30FB82A0A91D7001EB806 /* SpecieResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FB72A0A91D7001EB806 /* SpecieResponse.swift */; };
+		DED30FB82A0A91D7001EB806 /* SpecieDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FB72A0A91D7001EB806 /* SpecieDetailsResponse.swift */; };
 		DED30FBA2A0A92E5001EB806 /* SpecieDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FB92A0A92E5001EB806 /* SpecieDetailsUseCase.swift */; };
 		DED30FBD2A0A9461001EB806 /* CommonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FBC2A0A9461001EB806 /* CommonConstants.swift */; };
 		DED30FBF2A0AB946001EB806 /* SpecieCardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FBE2A0AB946001EB806 /* SpecieCardImageView.swift */; };
@@ -97,9 +97,9 @@
 		DE58B03B2A09D46B00173718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE58B03F2A09D65A00173718 /* SpecieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieCell.swift; sourceTree = "<group>"; };
 		DED30FB12A0A85EB001EB806 /* SpecieDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieDetailsRepository.swift; sourceTree = "<group>"; };
-		DED30FB32A0A9042001EB806 /* SpecieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieRequest.swift; sourceTree = "<group>"; };
+		DED30FB32A0A9042001EB806 /* EmptyRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyRequest.swift; sourceTree = "<group>"; };
 		DED30FB52A0A91C1001EB806 /* EvolutionChainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EvolutionChainResponse.swift; sourceTree = "<group>"; };
-		DED30FB72A0A91D7001EB806 /* SpecieResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieResponse.swift; sourceTree = "<group>"; };
+		DED30FB72A0A91D7001EB806 /* SpecieDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieDetailsResponse.swift; sourceTree = "<group>"; };
 		DED30FB92A0A92E5001EB806 /* SpecieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieDetailsUseCase.swift; sourceTree = "<group>"; };
 		DED30FBC2A0A9461001EB806 /* CommonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConstants.swift; sourceTree = "<group>"; };
 		DED30FBE2A0AB946001EB806 /* SpecieCardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieCardImageView.swift; sourceTree = "<group>"; };
@@ -277,10 +277,10 @@
 			isa = PBXGroup;
 			children = (
 				DE58B0292A095EA100173718 /* SpeciesPageRequest.swift */,
-				DED30FB32A0A9042001EB806 /* SpecieRequest.swift */,
+				DED30FB32A0A9042001EB806 /* EmptyRequest.swift */,
 				DE58B02C2A095EB800173718 /* PageResponse.swift */,
 				DE58B02E2A095EC700173718 /* SpeciesListItem.swift */,
-				DED30FB72A0A91D7001EB806 /* SpecieResponse.swift */,
+				DED30FB72A0A91D7001EB806 /* SpecieDetailsResponse.swift */,
 				DED30FB52A0A91C1001EB806 /* EvolutionChainResponse.swift */,
 			);
 			path = Entities;
@@ -451,14 +451,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				DE3BAC722A0A6DD800AFA748 /* SpecieDetailsViewModel.swift in Sources */,
-				DED30FB42A0A9042001EB806 /* SpecieRequest.swift in Sources */,
+				DED30FB42A0A9042001EB806 /* EmptyRequest.swift in Sources */,
 				DE58B0182A09451300173718 /* BaseEndopoint.swift in Sources */,
 				DE58B01E2A09454D00173718 /* EncoderFactory.swift in Sources */,
 				DE58B0232A095B1300173718 /* PokeApiConfiguration.swift in Sources */,
 				DED30FC92A0AD09F001EB806 /* AppServiceLocator.swift in Sources */,
 				DED30FBF2A0AB946001EB806 /* SpecieCardImageView.swift in Sources */,
 				DE58B02A2A095EA100173718 /* SpeciesPageRequest.swift in Sources */,
-				DED30FB82A0A91D7001EB806 /* SpecieResponse.swift in Sources */,
+				DED30FB82A0A91D7001EB806 /* SpecieDetailsResponse.swift in Sources */,
 				DE58B0272A095DBA00173718 /* PokeApi.swift in Sources */,
 				DED30FBD2A0A9461001EB806 /* CommonConstants.swift in Sources */,
 				DED30FB22A0A85EB001EB806 /* SpecieDetailsRepository.swift in Sources */,

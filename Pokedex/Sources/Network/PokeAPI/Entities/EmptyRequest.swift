@@ -1,5 +1,5 @@
 //
-//  SpecieRequest.swift
+//  EmptyRequest.swift
 //  Pokedex
 //
 //  Created by Andrei Ahibalau on 09/05/2023.

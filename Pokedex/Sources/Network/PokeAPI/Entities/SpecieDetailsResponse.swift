@@ -1,5 +1,5 @@
 //
-//  SpecieResponse.swift
+//  SpecieDetailsResponse.swift
 //  Pokedex
 //
 //  Created by Andrei Ahibalau on 09/05/2023.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct SpecieResponse: Decodable {
+struct SpecieDetailsResponse: Decodable {
   enum CodingKeys: String, CodingKey {
     case id
     case name
