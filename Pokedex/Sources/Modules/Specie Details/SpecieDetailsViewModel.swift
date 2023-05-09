@@ -24,10 +24,7 @@ class SpecieDetailsViewModel: ObservableObject {
   
   func laodData() {
     useCase.loadSpecie(with: specieId)
-      .sink { completion in
-        print("Details loading completed")
-      } receiveValue: { [weak self] details in
-        print("Details value: ", details)
+      .sink { _ in } receiveValue: { [weak self] details in
         self?.specie = details
         self?.loadEvolutionChain(with: details.evoulutionChainId)
       }
