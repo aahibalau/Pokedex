@@ -15,6 +15,7 @@ class SpeciesListViewModel: ObservableObject {
   @Published var species: [SpeciesPresentableListItem] = []
   @Published var hasNext: Bool = false
   @Published var isLoading: Bool = false
+  @Published var errorText: String? = nil
   var bag = Set<AnyCancellable>()
   private var selectedSpecie: SpecieDetailsViewModel?
   
@@ -26,11 +27,15 @@ class SpeciesListViewModel: ObservableObject {
   func loadData() {
     guard !isLoading else { return }
     isLoading = true
-    repository.getSpeciesPage(offset: species.count)
+    repository.speciesPage(offset: species.count)
       .sink { [weak self] completion in
         self?.isLoading = false
         switch completion {
-        case let .failure(error): print(error.localizedDescription)
+        case let .failure(error):
+          print(error.localizedDescription)
+          if self?.species.count == 0 {
+            self?.errorText = "Something Went Wrong"
+          }
         default: return
         }
       } receiveValue: { [weak self] response in

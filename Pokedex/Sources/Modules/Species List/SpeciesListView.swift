@@ -35,6 +35,9 @@ struct SpeciesListView: View {
             }
           }
         }
+        .refreshable {
+          viewModel.loadData()
+        }
         .listStyle(.plain)
         .navigationTitle("Species")
         .navigationDestination(for: String.self) { id in
@@ -42,6 +45,7 @@ struct SpeciesListView: View {
         }
       }
     }
+    .errorAlert(errorText: $viewModel.errorText)
     .onAppear {
       viewModel.loadData()
     }

@@ -47,7 +47,7 @@ extension AppServiceLocator: ServiceLocator {
 extension AppServiceLocator {
   func registerUseCases(with container: Container) {
     container.register(SpecieDetailsUseCase.self) { resolver in
-      SpecieDetailsUseCaseInteractor(repo: resolver.resolve(SpecieRepository.self)!)
+      SpecieDetailsUseCaseInteractor(repo: resolver.resolve(SpecieDetailsRepository.self)!)
     }
   }
 
@@ -57,8 +57,8 @@ extension AppServiceLocator {
         apiClient: resolver.resolve(ApiClient.self)!,
         endpointFactory: PokeApiEndpointFactory())
     }
-    container.register(SpecieRepository.self) { resolver in
-      BaseSpecieRepository(
+    container.register(SpecieDetailsRepository.self) { resolver in
+      BaseSpecieDetailsRepository(
         apiClient: resolver.resolve(ApiClient.self)!,
         endpointFactory: PokeApiEndpointFactory())
     }

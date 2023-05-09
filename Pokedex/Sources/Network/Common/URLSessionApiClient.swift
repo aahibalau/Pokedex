@@ -14,6 +14,7 @@ struct URLSessionApiClient: ApiClient {
 
   init(apiConfiguration: ApiConfiguration) {
     self.apiConfiguration = apiConfiguration
+    urlSession.configuration.timeoutIntervalForRequest = 20
   }
 
   // MARK: - Send Request

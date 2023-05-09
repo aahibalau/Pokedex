@@ -32,9 +32,9 @@ protocol SpecieDetailsUseCase {
 }
 
 struct SpecieDetailsUseCaseInteractor: SpecieDetailsUseCase {
-  let repo: SpecieRepository
+  let repo: SpecieDetailsRepository
   
-  init(repo: SpecieRepository) {
+  init(repo: SpecieDetailsRepository) {
     self.repo = repo
   }
   

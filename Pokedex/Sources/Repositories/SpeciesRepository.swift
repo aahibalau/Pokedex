@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 protocol SpeciesRepository {
-  func getSpeciesPage(offset: Int) -> AnyPublisher<PageResponse<SpeciesListItem>, ApiError>
+  func speciesPage(offset: Int) -> AnyPublisher<PageResponse<SpeciesListItem>, ApiError>
 }
 
 struct BaseSpeciesRepository: SpeciesRepository {
@@ -24,7 +24,7 @@ struct BaseSpeciesRepository: SpeciesRepository {
     self.apiClient = apiClient
   }
   
-  func getSpeciesPage(offset: Int) -> AnyPublisher<PageResponse<SpeciesListItem>, ApiError> {
+  func speciesPage(offset: Int) -> AnyPublisher<PageResponse<SpeciesListItem>, ApiError> {
     apiClient.sendRequest(to: endpointFactory.getSpeciesPage(offset: offset, limit: Constant.pageLimit))
   }
 }

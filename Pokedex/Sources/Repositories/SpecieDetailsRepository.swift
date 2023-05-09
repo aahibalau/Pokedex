@@ -1,5 +1,5 @@
 //
-//  SpecieRepository.swift
+//  SpecieDetailsRepository.swift
 //  Pokedex
 //
 //  Created by Andrei Ahibalau on 09/05/2023.
@@ -8,12 +8,12 @@
 import Foundation
 import Combine
 
-protocol SpecieRepository {
+protocol SpecieDetailsRepository {
   func specie(with id: String) -> AnyPublisher<SpecieResponse, ApiError>
   func evolutionChain(with id: String) -> AnyPublisher<EvolutionChainResponse, ApiError>
 }
 
-struct BaseSpecieRepository: SpecieRepository {
+struct BaseSpecieDetailsRepository: SpecieDetailsRepository {
   let apiClient: ApiClient
   let endpointFactory: EndpointFactory
   
