@@ -44,6 +44,10 @@
 		DED30FBA2A0A92E5001EB806 /* SpecieDetailsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FB92A0A92E5001EB806 /* SpecieDetailsUseCase.swift */; };
 		DED30FBD2A0A9461001EB806 /* CommonConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FBC2A0A9461001EB806 /* CommonConstants.swift */; };
 		DED30FBF2A0AB946001EB806 /* SpecieCardImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FBE2A0AB946001EB806 /* SpecieCardImageView.swift */; };
+		DED30FC12A0AC7B2001EB806 /* View+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FC02A0AC7B2001EB806 /* View+Utils.swift */; };
+		DED30FC42A0AD02C001EB806 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = DED30FC32A0AD02C001EB806 /* Swinject */; };
+		DED30FC72A0AD082001EB806 /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FC62A0AD082001EB806 /* ServiceLocator.swift */; };
+		DED30FC92A0AD09F001EB806 /* AppServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DED30FC82A0AD09F001EB806 /* AppServiceLocator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,7 +101,7 @@
 		DE58B0312A09948F00173718 /* SpeciesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesRepository.swift; sourceTree = "<group>"; };
 		DE58B0342A09A60400173718 /* SpeciesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListViewModel.swift; sourceTree = "<group>"; };
 		DE58B0392A09C8D700173718 /* SpeciesPresentableListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesPresentableListItem.swift; sourceTree = "<group>"; };
-		DE58B03B2A09D46B00173718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DE58B03B2A09D46B00173718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DE58B03F2A09D65A00173718 /* SpecieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieCell.swift; sourceTree = "<group>"; };
 		DED30FB12A0A85EB001EB806 /* SpecieRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieRepository.swift; sourceTree = "<group>"; };
 		DED30FB32A0A9042001EB806 /* SpecieRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieRequest.swift; sourceTree = "<group>"; };
@@ -106,6 +110,9 @@
 		DED30FB92A0A92E5001EB806 /* SpecieDetailsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieDetailsUseCase.swift; sourceTree = "<group>"; };
 		DED30FBC2A0A9461001EB806 /* CommonConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonConstants.swift; sourceTree = "<group>"; };
 		DED30FBE2A0AB946001EB806 /* SpecieCardImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieCardImageView.swift; sourceTree = "<group>"; };
+		DED30FC02A0AC7B2001EB806 /* View+Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Utils.swift"; sourceTree = "<group>"; };
+		DED30FC62A0AD082001EB806 /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
+		DED30FC82A0AD09F001EB806 /* AppServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppServiceLocator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DED30FC42A0AD02C001EB806 /* Swinject in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,10 +195,8 @@
 		DE58AFDF2A093DE400173718 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
-				DE58B03B2A09D46B00173718 /* Info.plist */,
 				DE58B00B2A0941FB00173718 /* Sources */,
 				DE58B00C2A09420400173718 /* Resources */,
-				DE58AFE02A093DE400173718 /* PokedexApp.swift */,
 				DE58AFE72A093DE500173718 /* Preview Content */,
 			);
 			path = Pokedex;
@@ -224,6 +230,8 @@
 		DE58B00B2A0941FB00173718 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DE58AFE02A093DE400173718 /* PokedexApp.swift */,
+				DED30FC52A0AD07A001EB806 /* DI */,
 				DED30FBB2A0A9456001EB806 /* Utils */,
 				DE3BAC752A0A788400AFA748 /* CommonViews */,
 				DE58B0332A099F2B00173718 /* Modules */,
@@ -236,6 +244,7 @@
 		DE58B00C2A09420400173718 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				DE58B03B2A09D46B00173718 /* Info.plist */,
 				DE58AFE42A093DE500173718 /* Assets.xcassets */,
 				DE58AFE62A093DE500173718 /* Pokedex.entitlements */,
 			);
@@ -303,8 +312,8 @@
 		DE58B0332A099F2B00173718 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				DE3BAC6E2A0A6D7D00AFA748 /* Specie Details */,
 				DE3BAC6D2A0A6D7300AFA748 /* Species List */,
+				DE3BAC6E2A0A6D7D00AFA748 /* Specie Details */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -329,8 +338,18 @@
 			isa = PBXGroup;
 			children = (
 				DED30FBC2A0A9461001EB806 /* CommonConstants.swift */,
+				DED30FC02A0AC7B2001EB806 /* View+Utils.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		DED30FC52A0AD07A001EB806 /* DI */ = {
+			isa = PBXGroup;
+			children = (
+				DED30FC62A0AD082001EB806 /* ServiceLocator.swift */,
+				DED30FC82A0AD09F001EB806 /* AppServiceLocator.swift */,
+			);
+			path = DI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -349,6 +368,9 @@
 			dependencies = (
 			);
 			name = Pokedex;
+			packageProductDependencies = (
+				DED30FC32A0AD02C001EB806 /* Swinject */,
+			);
 			productName = Pokedex;
 			productReference = DE58AFDD2A093DE400173718 /* Pokedex.app */;
 			productType = "com.apple.product-type.application";
@@ -421,6 +443,9 @@
 				Base,
 			);
 			mainGroup = DE58AFD42A093DE400173718;
+			packageReferences = (
+				DED30FC22A0AD02C001EB806 /* XCRemoteSwiftPackageReference "Swinject" */,
+			);
 			productRefGroup = DE58AFDE2A093DE400173718 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -468,6 +493,7 @@
 				DE58B0182A09451300173718 /* BaseEndopoint.swift in Sources */,
 				DE58B01E2A09454D00173718 /* EncoderFactory.swift in Sources */,
 				DE58B0232A095B1300173718 /* PokeApiConfiguration.swift in Sources */,
+				DED30FC92A0AD09F001EB806 /* AppServiceLocator.swift in Sources */,
 				DED30FBF2A0AB946001EB806 /* SpecieCardImageView.swift in Sources */,
 				DE58B02A2A095EA100173718 /* SpeciesPageRequest.swift in Sources */,
 				DED30FB82A0A91D7001EB806 /* SpecieResponse.swift in Sources */,
@@ -491,9 +517,11 @@
 				DE3BAC772A0A78FF00AFA748 /* SpecieImageView.swift in Sources */,
 				DED30FB62A0A91C1001EB806 /* EvolutionChainResponse.swift in Sources */,
 				DE58B01C2A09453C00173718 /* URLEncodable.swift in Sources */,
+				DED30FC12A0AC7B2001EB806 /* View+Utils.swift in Sources */,
 				DE58B0102A0944D900173718 /* ApiClient.swift in Sources */,
 				DE58B0142A0944FB00173718 /* Endpoint.swift in Sources */,
 				DE3BAC742A0A785E00AFA748 /* CardView.swift in Sources */,
+				DED30FC72A0AD082001EB806 /* ServiceLocator.swift in Sources */,
 				DE58B03A2A09C8D700173718 /* SpeciesPresentableListItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -653,7 +681,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Pokedex/Info.plist;
+				INFOPLIST_FILE = Pokedex/Resources/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -694,7 +722,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = Pokedex/Info.plist;
+				INFOPLIST_FILE = Pokedex/Resources/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -852,6 +880,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DED30FC22A0AD02C001EB806 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DED30FC32A0AD02C001EB806 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DED30FC22A0AD02C001EB806 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DE58AFD52A093DE400173718 /* Project object */;
 }

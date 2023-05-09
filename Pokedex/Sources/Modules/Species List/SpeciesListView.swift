@@ -8,29 +8,31 @@
 import SwiftUI
 
 struct SpeciesListView: View {
-  @ObservedObject private var viewModel: SpeciesListViewModel = SpeciesListViewModel(repository: BaseSpeciesRepository.repo)
+  @ObservedObject private var viewModel: SpeciesListViewModel
   
-//  init(viewModel: SpeciesListViewModel) {
-//    self.viewModel = viewModel
-//  }
+  init(viewModel: SpeciesListViewModel) {
+    self.viewModel = viewModel
+  }
   
   var body: some View {
     NavigationStack {
       if viewModel.isLoading && viewModel.species.isEmpty {
         ProgressView()
       } else {
-        List {
-          ForEach(viewModel.species) { specie in
-            NavigationLink(value: specie.id) {
-              SpecieCell(specie: specie)
+        ScrollView {
+          LazyVStack {
+            ForEach(viewModel.species) { specie in
+              NavigationLink(value: specie.id) {
+                SpecieCell(specie: specie)
+              }
+              .padding(horiztontal: CommonConstant.padding)
             }
-          }
-          if viewModel.hasNext {
-            ProgressView()
-              .frame(height: 40)
-              .frame(maxWidth: .infinity)
-              .onAppear { viewModel.loadData() }
-              .listRowSeparator(.hidden)
+            if viewModel.hasNext {
+              ProgressView()
+                .frame(maxWidth: .infinity)
+                .padding()
+                .onAppear { viewModel.loadData() }
+            }
           }
         }
         .listStyle(.plain)
@@ -43,11 +45,5 @@ struct SpeciesListView: View {
     .onAppear {
       viewModel.loadData()
     }
-  }
-}
-
-struct SpeciesListView_Previews: PreviewProvider {
-  static var previews: some View {
-    SpeciesListView()
   }
 }

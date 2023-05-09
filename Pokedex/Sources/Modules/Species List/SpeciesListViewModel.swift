@@ -9,7 +9,8 @@ import Foundation
 import Combine
 
 class SpeciesListViewModel: ObservableObject {
-  let repository: SpeciesRepository
+  private let repository: SpeciesRepository
+  private let serviceLocator: ServiceLocator
   
   @Published var species: [SpeciesPresentableListItem] = []
   @Published var hasNext: Bool = false
@@ -17,8 +18,9 @@ class SpeciesListViewModel: ObservableObject {
   var bag = Set<AnyCancellable>()
   private var selectedSpecie: SpecieDetailsViewModel?
   
-  init(repository: SpeciesRepository) {
+  init(repository: SpeciesRepository, serviceLocator: ServiceLocator) {
     self.repository = repository
+    self.serviceLocator = serviceLocator
   }
   
   func loadData() {
@@ -44,7 +46,7 @@ class SpeciesListViewModel: ObservableObject {
     if let selectedSpecie = self.selectedSpecie, selectedSpecie.specieId == id {
       return selectedSpecie
     }
-    let selectedSpecie = SpecieDetailsViewModel(id: id, useCase: SpecieDetailsUseCaseInteractor.useCase)
+    let selectedSpecie = serviceLocator.resolve(SpecieDetailsViewModel.self, argument: id)
     self.selectedSpecie = selectedSpecie
     return selectedSpecie
   }

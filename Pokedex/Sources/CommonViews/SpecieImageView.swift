@@ -8,6 +8,10 @@
 import SwiftUI
 
 struct SpecieImageView: View {
+  private enum Constant {
+    static let textScaleFactor: CGFloat = 0.6
+  }
+  
   let imageUrl: URL?
   let width: Double
   let height: Double
@@ -20,7 +24,7 @@ struct SpecieImageView: View {
         .clipped()
     } placeholder: {
       Text("?")
-        .font(.system(size: min(height, width) * 0.6))
+        .font(.system(size: min(height, width) * Constant.textScaleFactor))
         .foregroundColor(.black)
     }
     .frame(width: width, height: height)

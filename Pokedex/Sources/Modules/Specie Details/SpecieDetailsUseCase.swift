@@ -32,11 +32,6 @@ protocol SpecieDetailsUseCase {
 }
 
 struct SpecieDetailsUseCaseInteractor: SpecieDetailsUseCase {
-  static var useCase = SpecieDetailsUseCaseInteractor(
-    repo: BaseSpecieRepository(
-      apiClient: URLSessionApiClient(apiConfiguration: PokeApiConfiguration()),
-      endpointFactory: PokeApiEndpointFactory()))
-  
   let repo: SpecieRepository
   
   init(repo: SpecieRepository) {

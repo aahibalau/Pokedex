@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct CardView: View {
+  private enum Constant {
+    static let lineWidth: CGFloat = 1
+  }
   let width: Double
   let height: Double
   let cornerRadius: Double
@@ -17,7 +20,7 @@ struct CardView: View {
       RoundedRectangle(cornerRadius: cornerRadius)
         .fill(.white)
       RoundedRectangle(cornerRadius: cornerRadius)
-        .stroke(.red, lineWidth: 1)
+        .stroke(.red, lineWidth: Constant.lineWidth)
     }
     .frame(width: width, height: height)
   }

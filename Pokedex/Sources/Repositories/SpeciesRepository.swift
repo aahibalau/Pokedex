@@ -13,10 +13,6 @@ protocol SpeciesRepository {
 }
 
 struct BaseSpeciesRepository: SpeciesRepository {
-  static var repo: BaseSpeciesRepository {
-    BaseSpeciesRepository(apiClient: URLSessionApiClient(apiConfiguration: PokeApiConfiguration()), endpointFactory: PokeApiEndpointFactory())
-  }
-  
   enum Constant {
     static let pageLimit = 20
   }

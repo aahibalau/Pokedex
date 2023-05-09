@@ -8,6 +8,17 @@
 import SwiftUI
 
 struct SpecieDetailsView: View {
+  private enum Constant {
+    static let cardAspectRatio: CGFloat = 0.7
+    static let cardsSpacing: CGFloat = 30
+    static let imagesSectionHeight: CGFloat = 200
+    static let evolutionSectionHeight: CGFloat = 120
+    
+    static func evolutionScaleEffect(_ isHighlighted: Bool) -> CGSize {
+      let scale = isHighlighted ? 1.2 : 1
+      return CGSize(width: scale, height: scale)
+    }
+  }
   @ObservedObject private var viewModel: SpecieDetailsViewModel
   
   init(viewModel: SpecieDetailsViewModel) {
@@ -44,9 +55,9 @@ struct SpecieDetailsView: View {
   }
   
   func specieImages(for specie: SpecieDetails) -> some View {
-    HStack(alignment: .center, spacing: 20) {
-      let cardHeight: CGFloat = 200
-      let cardWidth = cardHeight * 0.7
+    HStack(alignment: .center, spacing: Constant.cardsSpacing) {
+      let cardHeight: CGFloat = Constant.imagesSectionHeight
+      let cardWidth = cardHeight * Constant.cardAspectRatio
       SpecieCardImageView(iconUrl: specie.frontImageUrl, width: cardWidth, height: cardHeight, cornerRadius: 20)
       SpecieCardImageView(iconUrl: specie.backImageUrl, width: cardWidth, height: cardHeight, cornerRadius: 20)
     }
@@ -60,16 +71,20 @@ struct SpecieDetailsView: View {
     } else {
       ForEach(0..<viewModel.evolutions.count, id: \.self) { index in
         ScrollView {
-          HStack(spacing: 20) {
+          HStack(spacing: Constant.cardsSpacing) {
             ForEach(viewModel.evolutions[index]) { item in
               VStack {
-                SpecieCardImageView(iconUrl: item.iconUrl, width: 40, height: 40, cornerRadius: 20)
+                SpecieCardImageView(
+                  iconUrl: item.iconUrl,
+                  width: CommonConstant.cardSize,
+                  height: CommonConstant.cardSize,
+                  cornerRadius: CommonConstant.cornerRadius)
                 Text(item.name)
               }
-              .scaleEffect(CGSize(width: item.isHighlighted ? 1.2 : 1, height: item.isHighlighted ? 1.2 : 1))
+              .scaleEffect(Constant.evolutionScaleEffect(item.isHighlighted))
             }
           }
-          .frame(height: 120)
+          .frame(height: Constant.evolutionSectionHeight)
           .frame(maxWidth: .infinity)
         }
       }

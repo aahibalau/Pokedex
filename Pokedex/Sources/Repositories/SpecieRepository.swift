@@ -14,13 +14,6 @@ protocol SpecieRepository {
 }
 
 struct BaseSpecieRepository: SpecieRepository {
-  static var repo: BaseSpecieRepository {
-    BaseSpecieRepository(apiClient: URLSessionApiClient(apiConfiguration: PokeApiConfiguration()), endpointFactory: PokeApiEndpointFactory())
-  }
-  
-  enum Constant {
-
-  }
   let apiClient: ApiClient
   let endpointFactory: EndpointFactory
   

@@ -16,11 +16,15 @@ struct SpecieCell: View {
   
   var body: some View {
     HStack {
-      SpecieCardImageView(iconUrl: specie.iconUrl, width: 50, height: 50, cornerRadius: 25)
+      SpecieCardImageView(
+        iconUrl: specie.iconUrl,
+        width: CommonConstant.cardSize,
+        height: CommonConstant.cardSize,
+        cornerRadius: CommonConstant.cornerRadius)
       Text(specie.name)
-        .padding()
+        .foregroundColor(.init(UIColor.white))
+        .padding(horiztontal: CommonConstant.halfPadding)
       Spacer()
-      Text("id: \(specie.id)")
     }
   }
 }
