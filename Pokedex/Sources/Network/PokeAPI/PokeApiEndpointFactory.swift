@@ -11,7 +11,7 @@ protocol EndpointFactory {
   func getSpeciesPage(offset: Int, limit: Int) -> BaseEndopoint<SpeciesPageRequest, PageResponse<SpeciesListItem>>
 }
 
-class FlickrEndpointFactory: EndpointFactory {
+class PokeApiEndpointFactory: EndpointFactory {
   func getSpeciesPage(offset: Int, limit: Int) -> BaseEndopoint<SpeciesPageRequest, PageResponse<SpeciesListItem>> {
     BaseEndopoint(
       configuration: PokeApi.speciesPage,

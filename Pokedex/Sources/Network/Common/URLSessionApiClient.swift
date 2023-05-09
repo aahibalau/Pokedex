@@ -20,7 +20,7 @@ struct URLSessionApiClient: ApiClient {
 
   func sendRequest<RequestEndpoint>(
     to endpoint: RequestEndpoint
-  ) -> AnyPublisher<RequestEndpoint.Response, Error> where RequestEndpoint : Endpoint {
+  ) -> AnyPublisher<RequestEndpoint.Response, ApiError> where RequestEndpoint : Endpoint {
     createRequest(for: endpoint)
       .flatMap(maxPublishers: .max(1)) {
         urlSession.dataTaskPublisher(for: $0)
@@ -29,10 +29,11 @@ struct URLSessionApiClient: ApiClient {
       }
       .tryMap { try endpoint.decode(data: $0.data) }
       .mapError {
-        guard let decodingError = $0 as? DecodingError else {
-          return $0 as Error
+        switch $0 {
+        case let apiError as ApiError: return apiError
+        case let decodingError as DecodingError: return ApiError.decode(decodingError)
+        default: return ApiError.undefined
         }
-        return ApiError.decode(decodingError)
       }
       .receive(on: DispatchQueue.main)
       .eraseToAnyPublisher()
@@ -42,7 +43,7 @@ struct URLSessionApiClient: ApiClient {
 
   private func createRequest<RequestEndpoint: Endpoint>(
     for endpoint: RequestEndpoint
-  ) -> AnyPublisher<URLRequest, Error> {
+  ) -> AnyPublisher<URLRequest, ApiError> {
     Just(URLRequest(url: baseUrl))
       .tryMap {
         var request = $0

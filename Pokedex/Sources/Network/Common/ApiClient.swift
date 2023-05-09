@@ -11,7 +11,7 @@ import Combine
 protocol ApiClient {
   func sendRequest<RequestEndpoint: Endpoint>(
     to endpoint: RequestEndpoint
-  ) -> AnyPublisher<RequestEndpoint.Response, Error>
+  ) -> AnyPublisher<RequestEndpoint.Response, ApiError>
 }
 
 enum ApiError: Error {
@@ -20,4 +20,5 @@ enum ApiError: Error {
   case decode(DecodingError)
   case undefined
   case notFound
+  
 }

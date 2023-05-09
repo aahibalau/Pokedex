@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		DE58AFE12A093DE400173718 /* PokedexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58AFE02A093DE400173718 /* PokedexApp.swift */; };
-		DE58AFE32A093DE400173718 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58AFE22A093DE400173718 /* ContentView.swift */; };
+		DE58AFE32A093DE400173718 /* SpeciesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58AFE22A093DE400173718 /* SpeciesListView.swift */; };
 		DE58AFE52A093DE500173718 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE58AFE42A093DE500173718 /* Assets.xcassets */; };
 		DE58AFE92A093DE500173718 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DE58AFE82A093DE500173718 /* Preview Assets.xcassets */; };
 		DE58AFF32A093DE500173718 /* PokedexTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58AFF22A093DE500173718 /* PokedexTests.swift */; };
@@ -29,6 +29,10 @@
 		DE58B02A2A095EA100173718 /* SpeciesPageRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B0292A095EA100173718 /* SpeciesPageRequest.swift */; };
 		DE58B02D2A095EB800173718 /* PageResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B02C2A095EB800173718 /* PageResponse.swift */; };
 		DE58B02F2A095EC700173718 /* SpeciesListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B02E2A095EC700173718 /* SpeciesListItem.swift */; };
+		DE58B0322A09948F00173718 /* SpeciesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B0312A09948F00173718 /* SpeciesRepository.swift */; };
+		DE58B0352A09A60400173718 /* SpeciesListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B0342A09A60400173718 /* SpeciesListViewModel.swift */; };
+		DE58B03A2A09C8D700173718 /* SpeciesPresentableListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B0392A09C8D700173718 /* SpeciesPresentableListItem.swift */; };
+		DE58B0402A09D65A00173718 /* SpecieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE58B03F2A09D65A00173718 /* SpecieCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,7 +55,7 @@
 /* Begin PBXFileReference section */
 		DE58AFDD2A093DE400173718 /* Pokedex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pokedex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DE58AFE02A093DE400173718 /* PokedexApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokedexApp.swift; sourceTree = "<group>"; };
-		DE58AFE22A093DE400173718 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DE58AFE22A093DE400173718 /* SpeciesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListView.swift; sourceTree = "<group>"; };
 		DE58AFE42A093DE500173718 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DE58AFE62A093DE500173718 /* Pokedex.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pokedex.entitlements; sourceTree = "<group>"; };
 		DE58AFE82A093DE500173718 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -75,6 +79,11 @@
 		DE58B0292A095EA100173718 /* SpeciesPageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesPageRequest.swift; sourceTree = "<group>"; };
 		DE58B02C2A095EB800173718 /* PageResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageResponse.swift; sourceTree = "<group>"; };
 		DE58B02E2A095EC700173718 /* SpeciesListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListItem.swift; sourceTree = "<group>"; };
+		DE58B0312A09948F00173718 /* SpeciesRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesRepository.swift; sourceTree = "<group>"; };
+		DE58B0342A09A60400173718 /* SpeciesListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesListViewModel.swift; sourceTree = "<group>"; };
+		DE58B0392A09C8D700173718 /* SpeciesPresentableListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeciesPresentableListItem.swift; sourceTree = "<group>"; };
+		DE58B03B2A09D46B00173718 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		DE58B03F2A09D65A00173718 /* SpecieCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +134,7 @@
 		DE58AFDF2A093DE400173718 /* Pokedex */ = {
 			isa = PBXGroup;
 			children = (
+				DE58B03B2A09D46B00173718 /* Info.plist */,
 				DE58B00B2A0941FB00173718 /* Sources */,
 				DE58B00C2A09420400173718 /* Resources */,
 				DE58AFE02A093DE400173718 /* PokedexApp.swift */,
@@ -161,8 +171,9 @@
 		DE58B00B2A0941FB00173718 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
+				DE58B0332A099F2B00173718 /* Modules */,
+				DE58B0302A097ED800173718 /* Repositories */,
 				DE58B00D2A0944A400173718 /* Network */,
-				DE58AFE22A093DE400173718 /* ContentView.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -225,8 +236,36 @@
 		DE58B0302A097ED800173718 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				DE58B0312A09948F00173718 /* SpeciesRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DE58B0332A099F2B00173718 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				DE58AFE22A093DE400173718 /* SpeciesListView.swift */,
+				DE58B0342A09A60400173718 /* SpeciesListViewModel.swift */,
+				DE58B03C2A09D63500173718 /* Views */,
+				DE58B0382A09C8C700173718 /* Entities */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		DE58B0382A09C8C700173718 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				DE58B0392A09C8D700173718 /* SpeciesPresentableListItem.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		DE58B03C2A09D63500173718 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DE58B03F2A09D65A00173718 /* SpecieCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,17 +404,21 @@
 				DE58B02A2A095EA100173718 /* SpeciesPageRequest.swift in Sources */,
 				DE58B0272A095DBA00173718 /* PokeApi.swift in Sources */,
 				DE58B0122A0944E600173718 /* URLSessionApiClient.swift in Sources */,
+				DE58B0322A09948F00173718 /* SpeciesRepository.swift in Sources */,
 				DE58B0162A09450800173718 /* EndpointConfiguration.swift in Sources */,
 				DE58B01A2A09451F00173718 /* ApiConfiguration.swift in Sources */,
 				DE58B0252A095BFB00173718 /* PokeApiEndpointFactory.swift in Sources */,
 				DE58B02F2A095EC700173718 /* SpeciesListItem.swift in Sources */,
 				DE58B02D2A095EB800173718 /* PageResponse.swift in Sources */,
-				DE58AFE32A093DE400173718 /* ContentView.swift in Sources */,
+				DE58B0402A09D65A00173718 /* SpecieCell.swift in Sources */,
+				DE58AFE32A093DE400173718 /* SpeciesListView.swift in Sources */,
 				DE58AFE12A093DE400173718 /* PokedexApp.swift in Sources */,
+				DE58B0352A09A60400173718 /* SpeciesListViewModel.swift in Sources */,
 				DE58B0202A09455A00173718 /* DecoderFactory.swift in Sources */,
 				DE58B01C2A09453C00173718 /* URLEncodable.swift in Sources */,
 				DE58B0102A0944D900173718 /* ApiClient.swift in Sources */,
 				DE58B0142A0944FB00173718 /* Endpoint.swift in Sources */,
+				DE58B03A2A09C8D700173718 /* SpeciesPresentableListItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +577,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pokedex/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -542,8 +586,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -552,10 +596,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aahibalau.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -572,6 +618,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Pokedex/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -580,8 +627,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -590,10 +637,12 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.aahibalau.Pokedex;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
